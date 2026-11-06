@@ -2,6 +2,7 @@
 // function of `t` (seconds) so live playback and frame capture match.
 
 export const clamp01 = (x) => Math.min(1, Math.max(0, x));
+export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const lerp = (a, b, k) => a + (b - a) * k;
 export const smooth = (x) => {
   const k = clamp01(x);
